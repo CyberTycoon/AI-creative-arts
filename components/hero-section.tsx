@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import Link from "next/link"
 
 export default function HeroSection() {
@@ -30,22 +31,12 @@ export default function HeroSection() {
           <div className="flex items-center justify-center">
             <div className="relative h-[300px] w-full max-w-[450px] overflow-hidden rounded-lg sm:h-[400px] md:h-[450px]">
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-500 to-indigo-600 p-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-full w-full text-white opacity-20"
-                >
-                  <path d="M12 2c1.1 0 2 .9 2 2v7c0 1.1-.9 2-2 2s-2-.9-2-2V4c0-1.1.9-2 2-2z" />
-                  <path d="M12 9c1.1 0 2 .9 2 2v7c0 1.1-.9 2-2 2s-2-.9-2-2v-7c0-1.1.9-2 2-2z" />
-                  <path d="M17 12h-2" />
-                  <path d="M9 12H7" />
-                  <circle cx="12" cy="12" r="10" />
-                </svg>
+                <Image
+                  src='/hero.jpg'
+                  alt='hero image'
+                  fill
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
                   <div className="text-center">
                     <h3 className="text-2xl font-bold">AI-Generated Art</h3>

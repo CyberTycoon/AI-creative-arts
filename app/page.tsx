@@ -1,7 +1,10 @@
 import HeroSection from "@/components/hero-section"
 import FeatureCard from "@/components/feature-card"
+import FeaturedVideo from "@/components/featured-video"
+import AIImageCard from "@/components/ai-image-card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Home() {
   return (
@@ -112,33 +115,12 @@ export default function Home() {
       </section>
 
       <section className="container px-4 md:px-6">
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Featured Video</h2>
-          <p className="mt-4 text-lg text-muted-foreground">Watch how AI is transforming the creative landscape</p>
-        </div>
-        <div className="mx-auto max-w-3xl">
-          <div className="aspect-video rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-            <div className="text-center p-8">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mx-auto mb-4 text-muted-foreground"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <polygon points="10 8 16 12 10 16 10 8" />
-              </svg>
-              <h3 className="text-xl font-medium">The Future of AI in Creative Arts</h3>
-              <p className="mt-2 text-sm text-muted-foreground">Click to watch this demonstration video</p>
-            </div>
-          </div>
-        </div>
+        <FeaturedVideo
+          title="Featured Video: The Rise of AI Artists"
+          description="Watch how AI is transforming the creative landscape"
+          thumbnailUrl="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+          videoUrl="https://youtu.be/A9xd2v_ThHQ?si=0ZXP2QeBQjxP7Vbl"
+        />
       </section>
 
       <section className="bg-accent py-16 md:py-24">
@@ -156,29 +138,41 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="relative h-[300px] rounded-lg overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center p-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-full w-full text-white opacity-10"
-                >
-                  <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
-                </svg>
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold">AI Innovation Hub</h3>
-                    <p className="mt-2">Exploring the frontiers of creative AI</p>
-                  </div>
-                </div>
-              </div>
+            <div className="relative h-[300px] overflow-hidden rounded-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80"
+                alt="AI innovations in creative arts"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="container px-4 md:px-6">
+        <div className="mb-10 text-center">
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">AI-Generated Artwork</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Explore stunning examples of art created with artificial intelligence
+          </p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <AIImageCard
+            imageUrl="/abstract.jpg"
+            title="Abstract Dreamscape"
+            description="AI-generated abstract art exploring the boundaries of imagination"
+          />
+          <AIImageCard
+            imageUrl="/digital.jpg"
+            title="Digital Renaissance"
+            description="Modern interpretation of classical art styles using neural networks"
+          />
+          <AIImageCard
+            imageUrl="/futuristic.jpg"
+            title="Futuristic Cityscape"
+            description="AI-imagined urban environments of tomorrow"
+          />
         </div>
       </section>
 

@@ -1,5 +1,7 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import FeaturedVideo from "@/components/featured-video"
 
 export default function AboutPage() {
   return (
@@ -14,29 +16,12 @@ export default function AboutPage() {
 
         <div className="mb-12 grid gap-8 md:grid-cols-2">
           <div className="relative h-[300px] overflow-hidden rounded-lg md:h-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center p-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-full w-full text-white opacity-10"
-              >
-                <path d="M12 2c1.1 0 2 .9 2 2v7c0 1.1-.9 2-2 2s-2-.9-2-2V4c0-1.1.9-2 2-2z" />
-                <path d="M12 9c1.1 0 2 .9 2 2v7c0 1.1-.9 2-2 2s-2-.9-2-2v-7c0-1.1.9-2 2-2z" />
-                <path d="M17 12h-2" />
-                <path d="M9 12H7" />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold">Our Vision</h3>
-                  <p className="mt-2">Bridging technology and creativity</p>
-                </div>
-              </div>
-            </div>
+            <Image
+              src="/about.jpg"
+              alt="AI Creative Arts team working on projects"
+              fill
+              className="object-cover"
+            />
           </div>
           <div className="flex flex-col justify-center space-y-4">
             <h2 className="text-2xl font-bold">Our Vision</h2>
@@ -51,6 +36,15 @@ export default function AboutPage() {
               writers, and filmmakers to embrace AI as a means to expand their creative horizons.
             </p>
           </div>
+        </div>
+
+        <div className="mb-12">
+          <FeaturedVideo
+            title="Our Mission and Vision"
+            description="Learn about our approach to AI in creative arts"
+            thumbnailUrl="https://images.unsplash.com/photo-1550305080-4e029753abcf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+            videoUrl="https://youtu.be/aD6jYCI7u4o?si=1-p20rMG_bi8CrD3"
+          />
         </div>
 
         <div className="mb-12 grid gap-8 md:grid-cols-2">
@@ -68,26 +62,12 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="relative h-[300px] overflow-hidden rounded-lg md:order-1 md:h-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center p-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-full w-full text-white opacity-10"
-              >
-                <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold">Our Approach</h3>
-                  <p className="mt-2">Multidisciplinary exploration of AI</p>
-                </div>
-              </div>
-            </div>
+            <Image
+              src="/approach.jpg"
+              alt="AI and human collaboration in creative process"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
 
@@ -95,26 +75,40 @@ export default function AboutPage() {
           <h2 className="mb-6 text-2xl font-bold">Our Team</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { name: "Dr. Alex Chen", role: "AI Researcher" },
-              { name: "Maya Johnson", role: "Creative Director" },
-              { name: "James Wilson", role: "Technical Lead" },
-              { name: "Sophia Lee", role: "Content Strategist" },
+              {
+                name: "Dr. Alex Chen",
+                role: "AI Researcher",
+                image:
+                  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+              },
+              {
+                name: "Maya Johnson",
+                role: "Creative Director",
+                image:
+                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80",
+              },
+              {
+                name: "James Wilson",
+                role: "Technical Lead",
+                image:
+                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80",
+              },
+              {
+                name: "Sophia Lee",
+                role: "Content Strategist",
+                image:
+                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1588&q=80",
+              },
             ].map((member, i) => (
               <div key={i} className="text-center">
-                <div className="mx-auto mb-4 h-32 w-32 overflow-hidden rounded-full bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-16 w-16 text-primary opacity-50"
-                  >
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
+                <div className="mx-auto mb-4 h-32 w-32 overflow-hidden rounded-full">
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={`Team Member - ${member.role}`}
+                    width={128}
+                    height={128}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <h3 className="font-bold">{member.name}</h3>
                 <p className="text-sm text-muted-foreground">{member.role}</p>

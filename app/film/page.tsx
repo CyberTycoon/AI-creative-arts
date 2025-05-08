@@ -1,6 +1,9 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import FeaturedVideo from "@/components/featured-video"
+import AIImageCard from "@/components/ai-image-card"
 
 export default function FilmPage() {
   return (
@@ -15,33 +18,12 @@ export default function FilmPage() {
 
         <div className="mb-12 grid gap-8 md:grid-cols-2">
           <div className="relative h-[300px] overflow-hidden rounded-lg md:h-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center p-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-full w-full text-white opacity-10"
-              >
-                <rect width="20" height="20" x="2" y="2" rx="2.18" ry="2.18" />
-                <line x1="7" x2="7" y1="2" y2="22" />
-                <line x1="17" x2="17" y1="2" y2="22" />
-                <line x1="2" x2="22" y1="12" y2="12" />
-                <line x1="2" x2="7" y1="7" y2="7" />
-                <line x1="2" x2="7" y1="17" y2="17" />
-                <line x1="17" x2="22" y1="17" y2="17" />
-                <line x1="17" x2="22" y1="7" y2="7" />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold">AI in Filmmaking</h3>
-                  <p className="mt-2">Revolutionizing visual storytelling</p>
-                </div>
-              </div>
-            </div>
+            <Image
+              src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+              alt="AI film production visualization"
+              fill
+              className="object-cover"
+            />
           </div>
           <div className="flex flex-col justify-center space-y-4">
             <h2 className="text-2xl font-bold">The Future of Filmmaking</h2>
@@ -176,72 +158,81 @@ export default function FilmPage() {
         </div>
 
         <div className="mb-12">
-          <h2 className="mb-6 text-2xl font-bold">AI Film in Action</h2>
-          <div className="mx-auto max-w-3xl">
-            <div className="aspect-video rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-              <div className="text-center p-8">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="mx-auto mb-4 text-muted-foreground"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <polygon points="10 8 16 12 10 16 10 8" />
-                </svg>
-                <h3 className="text-xl font-medium">Creating Films with AI: A Demonstration</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Click to watch this demonstration video</p>
-              </div>
-            </div>
+          <FeaturedVideo
+            title="AI Film in Action"
+            description="Watch how AI is transforming filmmaking and video production"
+            thumbnailUrl="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+            videoUrl="https://youtu.be/w3XS900kg1U?si=Yx-Ij-Yd-Ij-Yd-I"
+          />
+        </div>
+
+        <div className="mb-12">
+          <h2 className="mb-6 text-2xl font-bold">AI-Generated Film Examples</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <AIImageCard
+              imageUrl="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1625&q=80"
+              title="Neural Cinematography"
+              description="AI-generated visual compositions that push the boundaries of traditional filmmaking"
+            />
+            <AIImageCard
+              imageUrl="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"
+              title="Algorithmic VFX"
+              description="Special effects created by neural networks trained on blockbuster films"
+            />
           </div>
         </div>
 
         <div className="mb-12">
           <h2 className="mb-6 text-2xl font-bold">Featured AI Film Tools</h2>
           <div className="grid gap-6 md:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="overflow-hidden rounded-lg border">
-                <div className="relative h-[200px]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center p-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-24 w-24 text-primary opacity-50"
-                    >
-                      <rect width="20" height="20" x="2" y="2" rx="2.18" ry="2.18" />
-                      <line x1="7" x2="7" y1="2" y2="22" />
-                      <line x1="17" x2="17" y1="2" y2="22" />
-                      <line x1="2" x2="22" y1="12" y2="12" />
-                      <line x1="2" x2="7" y1="7" y2="7" />
-                      <line x1="2" x2="7" y1="17" y2="17" />
-                      <line x1="17" x2="22" y1="17" y2="17" />
-                      <line x1="17" x2="22" y1="7" y2="7" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold">AI Film Tool {i}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {i === 1
-                      ? "AI-powered creative tools for video editing, visual effects, and content generation."
-                      : i === 2
-                        ? "AI platform that analyzes scripts to predict audience engagement and box office potential."
-                        : "AI technology that can modify actors' lip movements to match dubbed dialogue in foreign languages."}
-                  </p>
-                </div>
+            <div className="overflow-hidden rounded-lg border">
+              <div className="relative h-[200px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1746&q=80"
+                  alt="AI visual effects software interface"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
+              <div className="p-4">
+                <h3 className="font-bold">RunwayML</h3>
+                <p className="text-sm text-muted-foreground">
+                  AI-powered creative tools for video editing, visual effects, and content generation.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-lg border">
+              <div className="relative h-[200px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1550305080-4e029753abcf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                  alt="AI script analysis software interface"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold">ScriptBook</h3>
+                <p className="text-sm text-muted-foreground">
+                  AI platform that analyzes scripts to predict audience engagement and box office potential.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-lg border">
+              <div className="relative h-[200px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1749&q=80"
+                  alt="AI video editing software interface"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold">Flawless</h3>
+                <p className="text-sm text-muted-foreground">
+                  AI technology that can modify actors' lip movements to match dubbed dialogue in foreign languages.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

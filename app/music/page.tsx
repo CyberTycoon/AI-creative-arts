@@ -1,6 +1,9 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import FeaturedVideo from "@/components/featured-video"
+import AIImageCard from "@/components/ai-image-card"
 
 export default function MusicPage() {
   return (
@@ -15,28 +18,12 @@ export default function MusicPage() {
 
         <div className="mb-12 grid gap-8 md:grid-cols-2">
           <div className="relative h-[300px] overflow-hidden rounded-lg md:h-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center p-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-full w-full text-white opacity-10"
-              >
-                <path d="M9 18V5l12-2v13" />
-                <circle cx="6" cy="18" r="3" />
-                <circle cx="18" cy="16" r="3" />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold">AI Music Composition</h3>
-                  <p className="mt-2">The future of sound creation</p>
-                </div>
-              </div>
-            </div>
+            <Image
+              src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+              alt="AI music composition visualization"
+              fill
+              className="object-cover"
+            />
           </div>
           <div className="flex flex-col justify-center space-y-4">
             <h2 className="text-2xl font-bold">The Sound of AI</h2>
@@ -175,67 +162,81 @@ export default function MusicPage() {
         </div>
 
         <div className="mb-12">
-          <h2 className="mb-6 text-2xl font-bold">AI Music in Action</h2>
-          <div className="mx-auto max-w-3xl">
-            <div className="aspect-video rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-              <div className="text-center p-8">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="mx-auto mb-4 text-muted-foreground"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <polygon points="10 8 16 12 10 16 10 8" />
-                </svg>
-                <h3 className="text-xl font-medium">Creating Music with AI: A Demonstration</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Click to watch this demonstration video</p>
-              </div>
-            </div>
+          <FeaturedVideo
+            title="AI Music in Action"
+            description="Watch how AI is transforming music creation and production"
+            thumbnailUrl="https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+            videoUrl="https://youtu.be/5wQqjtKIuxA?si=mUXD3zN_1hJqM5NK"
+          />
+        </div>
+
+        <div className="mb-12">
+          <h2 className="mb-6 text-2xl font-bold">AI-Generated Music Examples</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <AIImageCard
+              imageUrl="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+              title="Algorithmic Symphony"
+              description="AI-composed classical music that blends traditional orchestration with innovative harmonies"
+            />
+            <AIImageCard
+              imageUrl="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+              title="Neural Beats"
+              description="Electronic music created by neural networks trained on contemporary dance music"
+            />
           </div>
         </div>
 
         <div className="mb-12">
           <h2 className="mb-6 text-2xl font-bold">Featured AI Music Tools</h2>
           <div className="grid gap-6 md:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="overflow-hidden rounded-lg border">
-                <div className="relative h-[200px]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center p-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-24 w-24 text-primary opacity-50"
-                    >
-                      <path d="M9 18V5l12-2v13" />
-                      <circle cx="6" cy="18" r="3" />
-                      <circle cx="18" cy="16" r="3" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold">AI Music Tool {i}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {i === 1
-                      ? "An AI composer that creates original music for films, games, and commercials."
-                      : i === 2
-                        ? "AI-powered music creation platform for content creators and producers."
-                        : "AI-driven mastering platform that provides professional-quality results."}
-                  </p>
-                </div>
+            <div className="overflow-hidden rounded-lg border">
+              <div className="relative h-[200px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                  alt="AI composition software interface"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
+              <div className="p-4">
+                <h3 className="font-bold">AIVA</h3>
+                <p className="text-sm text-muted-foreground">
+                  An AI composer that creates original music for films, games, and commercials.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-lg border">
+              <div className="relative h-[200px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                  alt="AI music production software interface"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold">Amper Music</h3>
+                <p className="text-sm text-muted-foreground">
+                  AI-powered music creation platform for content creators and producers.
+                </p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-lg border">
+              <div className="relative h-[200px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1558584673-c834fb1cc3ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                  alt="AI music mastering software interface"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold">LANDR</h3>
+                <p className="text-sm text-muted-foreground">
+                  AI-driven mastering platform that provides professional-quality results.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

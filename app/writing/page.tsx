@@ -1,6 +1,9 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import FeaturedVideo from "@/components/featured-video"
+import AIImageCard from "@/components/ai-image-card"
 
 export default function WritingPage() {
   return (
@@ -15,28 +18,12 @@ export default function WritingPage() {
 
         <div className="mb-12 grid gap-8 md:grid-cols-2">
           <div className="relative h-[300px] overflow-hidden rounded-lg md:h-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center p-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-full w-full text-white opacity-10"
-              >
-                <path d="M17 6.1H3" />
-                <path d="M21 12.1H3" />
-                <path d="M15.1 18H3" />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold">AI-Generated Stories</h3>
-                  <p className="mt-2">Redefining narrative possibilities</p>
-                </div>
-              </div>
-            </div>
+            <Image
+              src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+              alt="AI writing and storytelling visualization"
+              fill
+              className="object-cover"
+            />
           </div>
           <div className="flex flex-col justify-center space-y-4">
             <h2 className="text-2xl font-bold">The Written Word, Reimagined</h2>
@@ -166,6 +153,31 @@ export default function WritingPage() {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        <div className="mb-12">
+          <FeaturedVideo
+            title="AI Writing in Action"
+            description="Watch how AI is transforming storytelling and content creation"
+            thumbnailUrl="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+            videoUrl="https://youtu.be/aTRWpGm7kCY?si=Yx-Ij-Yd-Ij-Yd-I"
+          />
+        </div>
+
+        <div className="mb-12">
+          <h2 className="mb-6 text-2xl font-bold">AI-Generated Writing Examples</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <AIImageCard
+              imageUrl="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+              title="Digital Storytelling"
+              description="AI-generated short stories that explore new narrative possibilities"
+            />
+            <AIImageCard
+              imageUrl="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+              title="Algorithmic Poetry"
+              description="Poems created by neural networks trained on classic and contemporary poetry"
+            />
           </div>
         </div>
 
