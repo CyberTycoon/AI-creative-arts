@@ -14,31 +14,6 @@ interface FeaturedVideoProps {
 export default function FeaturedVideo({ title, description, thumbnailUrl, videoUrl }: FeaturedVideoProps) {
   const [isPlaying, setIsPlaying] = useState(false)
 
-  // Function to extract video ID from various YouTube URL formats
-  const getYoutubeEmbedUrl = (url: string) => {
-    // Handle different YouTube URL formats
-    let videoId = ""
-
-    // Full youtube.com URLs
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/
-    const match = url.match(regExp)
-
-    if (match && match[2].length === 11) {
-      videoId = match[2]
-    } else {
-      // For shorts URLs
-      const shortsRegExp = /^.*(youtube.com\/shorts\/)([^#&?]*).*/
-      const shortsMatch = url.match(shortsRegExp)
-
-      if (shortsMatch && shortsMatch[2]) {
-        videoId = shortsMatch[2]
-      }
-    }
-
-    // Return the embed URL with autoplay parameter
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1`
-  }
-
   return (
     <div className="mx-auto max-w-3xl">
       <div className="mb-10 text-center">
@@ -65,14 +40,13 @@ export default function FeaturedVideo({ title, description, thumbnailUrl, videoU
             </div>
           </div>
         ) : (
-          <iframe
+          <video
             className="h-full w-full"
-            src={getYoutubeEmbedUrl(videoUrl)}
+            src={videoUrl}
             title={title}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+            controls
+            autoPlay
+          />
         )}
       </div>
     </div>

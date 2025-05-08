@@ -43,7 +43,7 @@ export default function AboutPage() {
             title="Our Mission and Vision"
             description="Learn about our approach to AI in creative arts"
             thumbnailUrl="https://images.unsplash.com/photo-1550305080-4e029753abcf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-            videoUrl="https://youtu.be/aD6jYCI7u4o?si=1-p20rMG_bi8CrD3"
+            videoUrl="/video2.mp4"
           />
         </div>
 

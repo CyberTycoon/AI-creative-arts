@@ -166,7 +166,7 @@ export default function MusicPage() {
             title="AI Music in Action"
             description="Watch how AI is transforming music creation and production"
             thumbnailUrl="https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-            videoUrl="https://youtu.be/5wQqjtKIuxA?si=mUXD3zN_1hJqM5NK"
+            videoUrl="/video3.mp4"
           />
         </div>
 
